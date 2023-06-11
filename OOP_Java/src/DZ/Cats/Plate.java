@@ -1,4 +1,4 @@
-package Cats;
+package DZ.Cats;
 
 public class Plate {
     private int food;

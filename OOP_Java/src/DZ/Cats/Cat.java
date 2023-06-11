@@ -1,4 +1,4 @@
-package Cats;
+package DZ.Cats;
 
 public class Cat {
     private String name;
