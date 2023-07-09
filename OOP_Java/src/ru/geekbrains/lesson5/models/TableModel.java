@@ -46,12 +46,25 @@ public class TableModel implements Model {
         return -1;
     }
 
-    /**TODO: Разработать метод самостоятельно в рамках домашнего задания
-     * Поменять бронь столика
-     * @return
+    /**
+     * TODO: Разработать метод самостоятельно в рамках домашнего задания
+     * Удалить бронь столика
      */
-    public int changeReservationTable(){
-        return 0;
+    public void deleteReservationTable(int oldReservation){
+        for (Table table : tables) {
+            Reservation tempReservation = null;
+            for (Reservation reservation : table.getReservations()) {
+                if (reservation.getId() == oldReservation) {
+                    tempReservation = reservation;
+                }
+            }
+            if (tempReservation != null) {
+                table.getReservations().remove(tempReservation);
+                System.out.printf("Бронь %d отменена\n", oldReservation);
+                break;
+            }
+        }
+
         //TODO: Для создания нового резерва столика стоит воспользоваться уже
         // существующим методом reservationTable
     }

@@ -24,13 +24,19 @@ public class BookingPresenter implements ViewObserver {
         bookingView.updateTablesView(loadTables());
     }
 
-    private void showReservationTableResult(int reservationNo){
-        bookingView.updateReservationTableResult(reservationNo);
+    private void showReservationTableResult(int reservationNo, int tableNo){
+        bookingView.updateReservationTableResult(reservationNo, tableNo);
     }
 
     @Override
     public void onReservationTable(Date orderDate, int tableNo, String name) {
         int reservationNo = tableModel.reservationTable(orderDate, tableNo, name);
-        showReservationTableResult(reservationNo);
+        showReservationTableResult(reservationNo, tableNo);
+    }
+
+    @Override
+    public void onChangeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name) {
+        tableModel.deleteReservationTable(oldReservation);
+        onReservationTable(reservationDate, tableNo, name);
     }
 }

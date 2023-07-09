@@ -24,8 +24,8 @@ public class BookingView implements View {
     }
 
     @Override
-    public void updateReservationTableResult(int reservationNo) {
-        System.out.printf("Столик успешно забронирован. Номер вашей брони: #%d\n", reservationNo);
+    public void updateReservationTableResult(int reservationNo, int tableNo) {
+        System.out.printf("Столик #%d успешно забронирован. Номер вашей брони: #%d\n", tableNo, reservationNo);
     }
 
     /**
@@ -46,7 +46,7 @@ public class BookingView implements View {
      * @param name
      */
     public void changeReservationTable(int oldReservation, Date reservationDate, int tableNo, String name){
-
+        observer.onChangeReservationTable(oldReservation, reservationDate, tableNo, name);
     }
 
 }

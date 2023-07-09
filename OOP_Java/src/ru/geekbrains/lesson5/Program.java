@@ -21,7 +21,7 @@ public class Program {
         bookingPresenter.showTables();
         bookingView.reservationTableEvent(new Date(), 103, "Станислав");
 
-        //bookingView.changeReservationTable();
+        bookingView.changeReservationTable(9001, new Date(), 102, "Дмитрий");
     }
 
 }

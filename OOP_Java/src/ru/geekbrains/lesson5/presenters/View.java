@@ -10,6 +10,5 @@ public interface View {
 
     void updateTablesView(Collection<Table> tables);
 
-    void updateReservationTableResult(int reservationNo);
-
+    void updateReservationTableResult(int reservationNo, int tableNo);
 }
